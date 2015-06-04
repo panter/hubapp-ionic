@@ -7,7 +7,7 @@
       <a href="" class="item item-thumbnail-left" ng-repeat="product in products" ng-click="purchase(product)">
         <img ng-src="img/{{product.image}}">
         <h2>{{product.name}}</h2>
-        <h3>CHF {{product.price}}.-</h3>
+        <h3>{{product.price | price}}</h3>
         <p>{{product.description}}</p>
       </a>
     </div>
