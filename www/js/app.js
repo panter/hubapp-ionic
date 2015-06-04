@@ -37,4 +37,10 @@ angular.module('hubapp', [
     templateUrl: 'views/products.html',
     controller: 'ProductsController'
   });
+
+  $stateProvider.state('purchases', {
+    url: '/purchases',
+    templateUrl: 'views/purchases.html',
+    controller: 'PurchasesController'
+  });
 });
