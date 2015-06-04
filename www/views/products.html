@@ -1,0 +1,16 @@
+<ion-pane>
+  <ion-header-bar class="bar-stable">
+    <h1 class="title">Products</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list">
+      <a href="" class="item item-thumbnail-left" ng-repeat="product in products" ng-click="purchase(product)">
+        <img ng-src="img/{{product.image}}">
+        <h2>{{product.name}}</h2>
+        <h3>CHF {{product.price}}.-</h3>
+        <p>{{product.description}}</p>
+      </a>
+
+    </div>
+  </ion-content>
+</ion-pane>
