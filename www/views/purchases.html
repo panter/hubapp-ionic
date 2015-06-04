@@ -3,10 +3,15 @@
     <h1 class="title">Purchases</h1>
   </ion-header-bar>
   <ion-content>
-    <div class="list">
-      <a href="" class="item" ng-repeat="purchase in purchases">
-        <h2>{{purchase.createdAt}} - {{purchase.price | price}}</h2>
-      </a>
+    <div ng-repeat="(date, purchases) in purchasesByDate">
+      <div class="item item-divider row">
+        <div class="col">{{date}}</div>
+      </div>
+      <div class="item row" ng-repeat="purchase in purchases">
+        <div class="col">{{purchase.createdAt | time}}</div>
+        <div class="col text-center">1 x {{purchase.product.name}}</div>
+        <div class="col text-right">{{purchase.price | price}}</div>
+      </div>
     </div>
   </ion-content>
 </ion-pane>

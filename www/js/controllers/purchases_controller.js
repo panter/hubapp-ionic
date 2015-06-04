@@ -1,21 +1,19 @@
 angular.module('hubapp')
 
-.controller('PurchasesController', function ($scope, Hub) {
+.controller('PurchasesController', function ($scope, Hub, $filter) {
   Hub.purchase.findAll().then(function (purchases) {
-    $scope.purchases = purchases;
+    $scope.purchasesByDate = groupByDate(purchases);
   });
+
+  function groupByDate (purchases) {
+    var purchasesByDate = {};
+    angular.forEach(purchases, function(purchase) {
+      var date = $filter('date')(purchase.createdAt);
+      if (!purchasesByDate[date]) {
+        purchasesByDate[date] = [];
+      }
+      purchasesByDate[date].push(purchase);
+    });
+    return purchasesByDate;
+  }
 });
-
-
-// [
-//   {
-//     "id": "zyx1098",
-//     "product": {
-//       "id": "abc4567",
-//       "name": "Coffee",
-//       "description": "Espresso from coffee machine"
-//     },
-//     "createdAt": "2015-06-04T12:58:14.362Z",
-//     "price": 1.0
-//   }
-// ]
