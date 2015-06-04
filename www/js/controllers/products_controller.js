@@ -1,8 +1,7 @@
 angular.module('hubapp')
 
-.controller('ProductsController', function($scope, $ionicActionSheet) {
+.controller('ProductsController', function($scope, $ionicActionSheet, Hub) {
   $scope.purchase = function (product) {
-    // Show the action sheet
     var hideSheet = $ionicActionSheet.show({
       buttons: [
        { text: 'One' },
@@ -16,27 +15,15 @@ angular.module('hubapp')
       buttonClicked: function(index) {
         var amount = index + 1;
         var purchase = {product: product.id, amount: amount};
-        console.log(purchase);
-        // Hub.purchase.add(purchase);
+        Hub.purchase.add(purchase).then(function(){
+          console.log(purchase);
+        });
         return true;
       }
     });
   };
 
-  $scope.products = [
-    {
-      "id": "abc4567",
-      "name": "Coffee",
-      "description": "Espresso from coffee machine",
-      "price": 1.0,
-      "image": "/products/coffee.png"
-    },
-    {
-      "id": "def8910",
-      "name": "Beer",
-      "description": "Free as in Open Source",
-      "price": 3.0,
-      "image": "/products/beer.png"
-    }
-  ];
+  Hub.product.findAll().then(function(products){
+    $scope.products = products;
+  });
 });
