@@ -68,8 +68,38 @@ module.exports=[
     },
     "createdAt": "2015-06-04T12:58:14.362Z",
     "price": 1.0
-  }
-]
+  },
+  {
+    "id": "def8910",
+    "product": {
+      "id": "abc4567",
+      "name": "Beer",
+      "description": "Free as in Open Source"
+    },
+    "createdAt": "2015-06-04T14:11:14.362Z",
+    "price": 3.0
+  },
+  {
+    "id": "zyx1098",
+    "product": {
+      "id": "abc4567",
+      "name": "Coffee",
+      "description": "Espresso from coffee machine"
+    },
+    "createdAt": "2015-06-04T16:50:14.362Z",
+    "price": 2.0
+  },
+  {
+    "id": "def8910",
+    "product": {
+      "id": "abc4567",
+      "name": "Beer",
+      "description": "Free as in Open Source"
+    },
+    "createdAt": "2015-06-05T16:16:14.362Z",
+    "price": 3.0
+  },
+];
 
 },{}],5:[function(require,module,exports){
 

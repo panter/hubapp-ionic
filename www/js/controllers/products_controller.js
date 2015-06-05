@@ -1,6 +1,6 @@
 angular.module('hubapp')
 
-.controller('ProductsController', function($scope, $ionicActionSheet, $ionicPopup, Hub) {
+.controller('ProductsController', function($scope, Hub, $ionicActionSheet, $ionicPopup, $filter) {
   $scope.purchase = function (product) {
     var hideSheet = $ionicActionSheet.show({
       buttons: [
@@ -24,10 +24,10 @@ angular.module('hubapp')
   };
 
   $scope.showPurchaseConfirmation = function(product, amount) {
-   var totalAmount = product.price * amount;
+   var totalAmount = $filter('price')(product.price * amount);
    var alertPopup = $ionicPopup.alert({
      title: 'Enjoy your ' + product.name + '!',
-     template: 'Amount booked: <strong> CHF ' + totalAmount + '.-</strong>'
+     template: 'Amount booked: <strong>' + totalAmount + '</strong>'
    });
   };
 
