@@ -1,4 +1,4 @@
-/* Empty. Add your own CSS if you like */
+/* Header Bar */
 ion-header-bar {
   background-color: #124553 !important;
   color: white !important;
@@ -21,6 +21,19 @@ ion-header-bar {
   bottom: 4px;
 }
 
+/* Side Menu */
 ion-side-menu .bar:before {
   display: none;
+}
+
+.sidemenu ion-item{
+  line-height: 30px;
+}
+
+.sidemenu i {
+  display: block;
+  float: left;
+  font-size: 30px;
+  width: 40px;
+  color: #124553;
 }
