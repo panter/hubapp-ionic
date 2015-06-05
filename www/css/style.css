@@ -1,1 +1,39 @@
-/* Empty. Add your own CSS if you like */
+/* Header Bar */
+ion-header-bar {
+  background-color: #124553 !important;
+  color: white !important;
+}
+
+.bar .title, .bar .button {
+  color: white !important;
+}
+
+.bar:before{
+  display: block;
+  content: '';
+  width: 35px;
+  height: 35px;
+  background-image: url('../img/logo.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: 35px;
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+}
+
+/* Side Menu */
+ion-side-menu .bar:before {
+  display: none;
+}
+
+.sidemenu ion-item{
+  line-height: 30px;
+}
+
+.sidemenu i {
+  display: block;
+  float: left;
+  font-size: 30px;
+  width: 40px;
+  color: #124553;
+}
