@@ -37,3 +37,7 @@ ion-side-menu .bar:before {
   width: 40px;
   color: #124553;
 }
+
+.button.button-positive {
+  background-color: #124553 !important;
+}
